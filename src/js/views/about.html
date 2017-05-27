@@ -13,7 +13,8 @@ $yellowgls: #FEFFB5;
 }
 
 .form-group {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
 section {
@@ -22,16 +23,6 @@ section {
 }
 
 .pedido-bkg-image {
-    /*	    width: auto;
-	    background-image: url(/css/images/road.jpg);
-	    background-size: cover;
-	    background-repeat: no-repeat;
-	    background-position: center center;
-	    color: white;
-	    left:0;
-	    right:0;
-	    position: absolute;
-	    display: inline-block;*/
     background-image: url(/css/images/road.jpg);
     width: auto;
     background-size: cover;
@@ -102,12 +93,11 @@ section {
         <div class="title_wrapper">
             Conoce nuestros servicios
         </div>
-        <div class="description" style="text-align: center;">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        </div>
-        <div class="description" style="text-align: center;">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </div>
+        <p style="text-align: center;">
+            Somos una empresa proveedora de Gas LP ecológico ubicada en Monterrey, Nuevo León, que forma parte del Grupo RegioGas.
+        </p>
+        <br>
+        
         <div class="oj-flex" id="perks_wrapper">
             <div class="oj-sm-12 oj-md-3 perk">
                 <div class="svg-icon-wrapper">
@@ -116,9 +106,9 @@ section {
                 <div class="perk-title">
                     Domiciliario
                 </div>
-                <div class="perk-content">
+       <!--          <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
+                </div> -->
             </div>
             <div class="oj-sm-12 oj-md-3 perk">
                 <div class="svg-icon-wrapper">
@@ -127,9 +117,9 @@ section {
                 <div class="perk-title">
                     Industrial
                 </div>
-                <div class="perk-content">
+             <!--    <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
+                </div> -->
             </div>
             <div class="oj-sm-12 oj-md-3 perk">
                 <div class="svg-icon-wrapper">
@@ -138,9 +128,9 @@ section {
                 <div class="perk-title">
                     Estaciones
                 </div>
-                <div class="perk-content">
+    <!--             <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
+                </div> -->
             </div>
             <div class="oj-sm-12 oj-md-3 perk">
                 <div class="svg-icon-wrapper">
@@ -149,12 +139,17 @@ section {
                 <div class="perk-title">
                     Portatil
                 </div>
-                <div class="perk-content">
+                <!-- <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
+                </div> -->
             </div>
             
         </div>
+        <br>
+        <p style="text-align: center;">
+            Contamos con la comercialización y suministro de Gas LP para soluciones industriales y residenciales con 52 autotanques disponibles a su servicio los 365 días del año, además de 26 estaciones de carburación y plantas de almacenamiento para realizar recargas de cilindros y automóviles.
+        </p>
+
     </section>
     <section id="estaciones">
         <div class="title_wrapper">
@@ -229,10 +224,11 @@ section {
                             </div>
                         </div>
                         <div class="right-column oj-sm-12 oj-md-6">
+                    <div class="oj-flex">
                             <div class="form-group">
                                 <!-- <label for="colonia-input" class="form-control-label">Colonia</label>             -->
                                 <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:20em; margin-bottom: 0px;'}, value:colonia, placeholder: 'Colonia'}">
+								rootAttributes: {style:'max-width:20em;'}, value:colonia, placeholder: 'Colonia'}">
                                     <!-- ko foreach: municipios -->
                                     <option data-bind="value:value, text:label"></option>
                                     <!-- /ko -->
@@ -258,21 +254,20 @@ section {
                             </div>
                             <div class="form-group">
                                 <div class="oj-flex">
-                                    <div style="width: 50%;">
-                                        <!-- <label for="entrecalle1-input" class="form-control-label">Entre calle (1)</label>                             -->
-                                        <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                	<div style="width: 45%">
+	                                    <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 										value: entrecalle1, placeholder: 'Entre calle (1)',
-										rootAttributes: {style:'width: 100%; margin-right: 0.4em; max-width: 8em'}}" />
-                                    </div>
-                                    <div style="width: 50%">
-                                        <!-- <label for="entrecalle2-input" class="form-control-label">Entre calle (2)</label>                             -->
-                                        <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
+									</div>
+                                	<div style="width: 50%; margin-left: 5%;">
+	                                    <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 										value: entrecalle2, placeholder: 'Entre calle (2)',
-										rootAttributes: {style:'max-width: 8em; margin-left: 0.4em;'}}" />
-                                    </div>
+										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
+									</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <input id="send-button" type="button" data-bind="click: submitOrder, 
 								ojComponent: {component: 'ojButton', label: 'Enviar', 
 								rootAttributes: {style:'width: 100%;'}}" />
@@ -283,7 +278,7 @@ section {
     </div>
 </section>
 <div class="oj-hybrid-padding oj-web-applayout-max-width" style="padding-top: 0px; padding-bottom: 0px;">
-    <section id="contacto" class="gray_background">
+    <section id="contacto">
         <div class="oj-flex">
         	<div class="oj-sm-0 oj-md-1 oj-flex-item"></div>
             <div class="oj-sm-12 oj-md-6 oj-flex-item">
@@ -293,24 +288,20 @@ section {
                     <br>
                     <p>Escribenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al XXXXXXXX y en Whatsapp al XXXXXXXXX.</p>
                     <div class="oj-flex">
-                        <div class="form-group" style="width: 100%;">
-                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                        <div class="form-group">
                             <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Nombre',
 								rootAttributes: {style:'width: 100%; max-width: none'}}" />
                         </div>
-                        <br>
-                        <div class="form-group" style="width: 100%;">
-                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                        <div class="form-group">
                             <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Teléfono',
-								rootAttributes: {style:'width: 100%'}}" />
+								rootAttributes: {style:'width: 100%;'}}" />
                             <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Correo electrónico',
 								rootAttributes: {style:'width: 100%'}}" />
                         </div>
-                        <div class="form-group" style="width: 100%;">
-                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                        <div class="form-group">
                             <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
 								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Estado'}">
                                 <!-- ko foreach: municipios -->
@@ -324,10 +315,14 @@ section {
                                 <!-- /ko -->
                             </select>
                         </div>
-                        <div class="form-group" style="width: 100%; height: 10em !important;">
+                        <div class="form-group">
                             <textarea id="contact-comentario" style="height: 100px; resize: vertical;" data-bind="ojComponent: {component: 'ojTextArea', placeholder: 'Comentarios...',
 					                                     value: contactoComentario, rootAttributes: {style:'max-width:none; height: 100%;'}}"></textarea>
                         </div>
+                        <input id="send-button" type="button" data-bind="click: submitOrder, 
+								ojComponent: {component: 'ojButton', label: 'Enviar', 
+								rootAttributes: {style:'width: 100%;'}}" />
+
                     </div>
             </div>
             <div class=" oj-sm-12 oj-md-6">

@@ -15,7 +15,6 @@
 
 body {
     line-height: 1.42857143;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
 }
 
 .gls-icon {
@@ -50,7 +49,6 @@ body {
 
 .description {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.5em;
     font-weight: 200;
     color: rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -85,7 +83,7 @@ body {
 .perk-title {
     margin-bottom: 0.5rem;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Circular", sans-serif;
 }
 
@@ -98,11 +96,61 @@ body {
 #perks_wrapper {
     margin-top: 5%;
     text-align: center;
+    width: 80%;
+    margin: auto;
 }
 
 p {
     font-size: 16px;
     text-align: justify;
+}
+
+footer * {
+    color: #7c7c7c !important;
+}
+
+.footer-section {
+    /*width: 15%;*/
+    padding-bottom: 8px;
+    display: inline-block;
+    width: 45%;
+}
+
+.oj-web-applayout-footer-item {
+    margin-bottom: 10px;
+}
+
+.footer-section-content {
+    font-size: 0.7em;
+    margin-top: 0.5em;
+}
+
+.footer-content-entry {
+    padding: 2px;
+}
+
+.footer-title-icon {
+    width: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.footer-content-icon {
+    width: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.footer-title {
+    display: inline-block;
+    font-size: 0.85em;
+    border-bottom: 1px solid #7c7c7c;
+    padding-top: 10px;
+    margin-left: 0.3em;
+    width: 100%;
+    padding-bottom: 8px;
 }
 
 .gray_background {
@@ -163,7 +211,7 @@ p {
         line-height: 1.42857143;
     }
     .perk {
-        margin-bottom: 4em;
+        margin-bottom: 1.5em;
     }
     #map-canvas {
         height: 400px;
@@ -234,5 +282,19 @@ p {
     #appNameContainer {
         margin-left: 3%;
         width: 100%;
+    }
+    #copyright {
+        font-size: 0.7em !important;
+    }
+
+    .footer-title {
+        text-align: left;
+    }
+    .footer-content-entry {
+        padding: 2px;
+        text-align: left;
+    }
+    .footer-appName-section {
+        margin-bottom: 10px;
     }
 }
