@@ -1,0 +1,337 @@
+<style type="text/css">
+$bluegls: #0081F9;
+$lighterbluegls: #70baff;
+$redgls: #FA0000;
+$yellowgls: #FEFFB5;
+.svg-icon-wrapper {
+    width: 40%;
+    margin: auto;
+}
+
+.perk {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+section {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.pedido-bkg-image {
+    /*	    width: auto;
+	    background-image: url(/css/images/road.jpg);
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    color: white;
+	    left:0;
+	    right:0;
+	    position: absolute;
+	    display: inline-block;*/
+    background-image: url(/css/images/road.jpg);
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+}
+
+.pedido-bkg-image h1 {
+    color: white;
+}
+
+.pedido-bkg-image h2 {
+    color: white;
+}
+
+.svg-icon {
+    width: 100%;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    border-radius: 30%;
+    background-color: #70baff;
+    height: 100px;
+}
+
+#order-header {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.transparent-bg {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 20px;
+}
+
+#map_wrapper {
+    position: relative;
+}
+
+#order-left-content {
+    margin-right: 2em;
+}
+</style>
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding oj-web-applayout-max-width">
+    <section id="inicio">
+        <h3>TODO Carousel</h3>
+        <div class="single-item" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true}'>
+            <div>
+                <h3>1</h3></div>
+            <div>
+                <h3>2</h3></div>
+            <div>
+                <h3>3</h3></div>
+            <div>
+                <h3>4</h3></div>
+            <div>
+                <h3>5</h3></div>
+            <div>
+                <h3>6</h3></div>
+        </div>
+    </section>
+    <section id="servicios" class="gray_background">
+        <div class="title_wrapper">
+            Conoce nuestros servicios
+        </div>
+        <div class="description" style="text-align: center;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </div>
+        <div class="description" style="text-align: center;">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </div>
+        <div class="oj-flex" id="perks_wrapper">
+            <div class="oj-sm-12 oj-md-3 perk">
+                <div class="svg-icon-wrapper">
+                    <img src="css/images/house.svg" alt="bulleted list image" />
+                </div>
+                <div class="perk-title">
+                    Domiciliario
+                </div>
+                <div class="perk-content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+            </div>
+            <div class="oj-sm-12 oj-md-3 perk">
+                <div class="svg-icon-wrapper">
+                    <img src="css/images/factory.svg" alt="bulleted list image" />
+                </div>
+                <div class="perk-title">
+                    Industrial
+                </div>
+                <div class="perk-content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+            </div>
+            <div class="oj-sm-12 oj-md-3 perk">
+                <div class="svg-icon-wrapper">
+                    <img src="css/images/gas-station.svg" alt="bulleted list image" />
+                </div>
+                <div class="perk-title">
+                    Estaciones
+                </div>
+                <div class="perk-content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+            </div>
+            <div class="oj-sm-12 oj-md-3 perk">
+                <div class="svg-icon-wrapper">
+                    <img src="css/images/gas.svg" alt="bulleted list image" />
+                </div>
+                <div class="perk-title">
+                    Portatil
+                </div>
+                <div class="perk-content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section id="estaciones">
+        <div class="title_wrapper">
+            Estaciones
+        </div>
+        <div id="map_wrapper" class="row">
+            <div class="col-md-12 col-sm-12" id="map-canvas"></div>
+            <div class="oj-panel" id="over_map">
+                <div class="over_map_text">Encuentra tu sucursal más cercana</div>
+                <select id="selectlocation" data-bind="ojComponent: {component: 'ojSelect', optionChange: estacionOptionChange,
+					rootAttributes: { style:'width:10em; margin-top:1em;'}}">
+                    <!-- ko foreach: estacionesSelect -->
+                    <option data-bind="value:value, text:label"></option>
+                    <!-- /ko -->
+                </select>
+            </div>
+        </div>
+    </section>
+</div>
+<section id="pedidos" class="pedido-bkg-image">
+    <div class="oj-hybrid-padding oj-web-applayout-max-width">
+        <div class="oj-flex">
+            <div class=" oj-sm-12 oj-md-6 oj-flex-item">
+                <div id="order-left-content">
+                    <h2 id="side-title">
+						¿NECESITAS GAS A DOMICILIO?
+					</h2>
+                    <p>Llena nuestra forma y mandaremos un chofer a tu domicilio, si ya has realizado pedidos antes basta con que ingreses tu teléfono.</p>
+                </div>
+            </div>
+            <div class="oj-sm-12 oj-md-6">
+                <div class="transparent-bg oj-panel">
+                    <div id="order-header">
+                        <h2>Ordena tu pedido</h2>
+                    </div>
+                    <div class="oj-flex">
+                        <div class="left-column oj-sm-12 oj-md-6">
+                            <div class="form-group">
+                                <!-- <label for="cp-input" class="form-control-label">Codigo Postal</label>               -->
+                                <input id="cp-input" placeholder="Busca tu codigo postal..." data-bind="ojComponent: {
+								component: 'ojInputSearch',
+								value: cpostal, placeholder: 'Codigo Postal',
+								optionChange: doZIPSearch,
+								rootAttributes: {style:'max-width: 18em'}}">
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                                <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: nombre, placeholder: 'Nombre',
+								rootAttributes: {style:'max-width: 18em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="telefono-input" class="form-control-label">Telefono</label>             -->
+                                <input id="telefono-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: telefono, placeholder: 'Teléfono',
+								rootAttributes: {style:'max-width: 18em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="importe-input" class="form-control-label">Importe</label>               -->
+                                <input id="importe-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: importe, placeholder: 'Importe',
+								rootAttributes: {style:'max-width: 18em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="municipio-input" class="form-control-label">Municipio</label>      -->
+                                <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Municipio'}">
+                                    <!-- ko foreach: municipios -->
+                                    <option data-bind="value:value, text:label"></option>
+                                    <!-- /ko -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="right-column oj-sm-12 oj-md-6">
+                            <div class="form-group">
+                                <!-- <label for="colonia-input" class="form-control-label">Colonia</label>             -->
+                                <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:20em; margin-bottom: 0px;'}, value:colonia, placeholder: 'Colonia'}">
+                                    <!-- ko foreach: municipios -->
+                                    <option data-bind="value:value, text:label"></option>
+                                    <!-- /ko -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="calle-input" class="form-control-label">Calle</label>                   -->
+                                <input id="calle-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: calle, placeholder: 'Calle',
+								rootAttributes: {style:'max-width:20em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="nointerior-input" class="form-control-label">Numero Interior</label>                             -->
+                                <input id="nointerior-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: noInterior, placeholder: 'Numero interior/exterior',
+								rootAttributes: {style:'max-width: 20em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="arrivaltime-input" class="form-control-label">Hora de llegada</label>                             -->
+                                <input id="arrivaltime-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: arrivalTime, placeholder: 'Hora de llegada',
+								rootAttributes: {style:'max-width: 20em'}}" />
+                            </div>
+                            <div class="form-group">
+                                <div class="oj-flex">
+                                    <div style="width: 50%;">
+                                        <!-- <label for="entrecalle1-input" class="form-control-label">Entre calle (1)</label>                             -->
+                                        <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+										value: entrecalle1, placeholder: 'Entre calle (1)',
+										rootAttributes: {style:'width: 100%; margin-right: 0.4em; max-width: 8em'}}" />
+                                    </div>
+                                    <div style="width: 50%">
+                                        <!-- <label for="entrecalle2-input" class="form-control-label">Entre calle (2)</label>                             -->
+                                        <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+										value: entrecalle2, placeholder: 'Entre calle (2)',
+										rootAttributes: {style:'max-width: 8em; margin-left: 0.4em;'}}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input id="send-button" type="button" data-bind="click: submitOrder, 
+								ojComponent: {component: 'ojButton', label: 'Enviar', 
+								rootAttributes: {style:'width: 100%;'}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="oj-hybrid-padding oj-web-applayout-max-width" style="padding-top: 0px; padding-bottom: 0px;">
+    <section id="contacto" class="gray_background">
+        <div class="oj-flex">
+        	<div class="oj-sm-0 oj-md-1 oj-flex-item"></div>
+            <div class="oj-sm-12 oj-md-6 oj-flex-item">
+                    <h2 id="side-title">
+						Estamos a tu disposición
+					</h2>
+                    <br>
+                    <p>Escribenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al XXXXXXXX y en Whatsapp al XXXXXXXXX.</p>
+                    <div class="oj-flex">
+                        <div class="form-group" style="width: 100%;">
+                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: nombre, placeholder: 'Nombre',
+								rootAttributes: {style:'width: 100%; max-width: none'}}" />
+                        </div>
+                        <br>
+                        <div class="form-group" style="width: 100%;">
+                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: nombre, placeholder: 'Teléfono',
+								rootAttributes: {style:'width: 100%'}}" />
+                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								value: nombre, placeholder: 'Correo electrónico',
+								rootAttributes: {style:'width: 100%'}}" />
+                        </div>
+                        <div class="form-group" style="width: 100%;">
+                            <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
+                            <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Estado'}">
+                                <!-- ko foreach: municipios -->
+                                <option data-bind="value:value, text:label"></option>
+                                <!-- /ko -->
+                            </select>
+                            <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Municipio'}">
+                                <!-- ko foreach: municipios -->
+                                <option data-bind="value:value, text:label"></option>
+                                <!-- /ko -->
+                            </select>
+                        </div>
+                        <div class="form-group" style="width: 100%; height: 10em !important;">
+                            <textarea id="contact-comentario" style="height: 100px; resize: vertical;" data-bind="ojComponent: {component: 'ojTextArea', placeholder: 'Comentarios...',
+					                                     value: contactoComentario, rootAttributes: {style:'max-width:none; height: 100%;'}}"></textarea>
+                        </div>
+                    </div>
+            </div>
+            <div class=" oj-sm-12 oj-md-6">
+            </div>
+        </div>
+    </section>
+</div>

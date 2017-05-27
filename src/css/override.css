@@ -1,0 +1,238 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+#navbar {
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+body {
+    line-height: 1.42857143;
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.gls-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle !important;
+}
+
+.oj-web-applayout-header-title {
+    font-size: 1.5rem;
+}
+
+.oj-hybrid-padding {
+    padding-left: 15em;
+    padding-right: 15em;
+}
+
+.oj-web-applayout-header > div,
+.oj-web-applayout-footer > div {
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
+.title_wrapper {
+    font-size: 2.42857rem;
+    font-weight: 1000;
+    letter-spacing: 0.8px;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.description {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em;
+    font-weight: 200;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    line-height: 1.42857143;
+    width: 80%;
+    margin: auto;
+}
+
+#map-canvas {
+    height: 600px;
+}
+
+#over_map {
+    text-align: center;
+    position: absolute;
+    border-top: 5px;
+    border-right: 5px;
+    border-top-color: #0081F9;
+    border-top-style: solid;
+    top: 475px;
+    z-index: 99;
+    background: rgba(255, 255, 255);
+    height: 125px;
+    width: 25%;
+}
+
+.svg-icon-wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+.perk-title {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: "Circular", sans-serif;
+}
+
+.perk-content {
+    font-size: 1rem;
+    margin: auto;
+    width: 80%;
+}
+
+#perks_wrapper {
+    margin-top: 5%;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.gray_background {
+    padding-left: 3000px;
+    margin-left: -3000px;
+    padding-right: 3000px;
+    margin-right: -3000px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#side-title {
+    font-size: 2.42857rem;
+    font-weight: 200;
+    letter-spacing: 0.8px;
+}
+
+.right-column .form-group {
+    margin-left: 0.5em;
+}
+
+.left-column .form-group {
+    margin-right: 0.5em;
+}
+
+#drawerToggleButton {
+    z-index: 500;
+}
+
+#navDrawer {
+    z-index: 500;
+}
+
+@media (max-width: 767px) {
+    .title_wrapper {
+        font-size: 2rem;
+        font-family: "Circular", sans-serif;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .gray_background .title_wrapper {
+        font-size: 2rem;
+        font-family: "Circular", sans-serif;
+        margin-top: 0%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .oj-hybrid-padding {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .description {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 200;
+        color: rgba(0, 0, 0, 0.8);
+        margin-bottom: 5%;
+        text-align: center;
+        line-height: 1.42857143;
+    }
+    .perk {
+        margin-bottom: 4em;
+    }
+    #map-canvas {
+        height: 400px;
+    }
+    #over_map {
+        text-align: center;
+        position: absolute;
+        border-top: 5px;
+        border-right: 5px;
+        border-top-color: #0081F9;
+        border-top-style: solid;
+        top: 300px;
+        z-index: 99;
+        background: rgba(255, 255, 255);
+        height: 100px;
+        width: 40%;
+    }
+    .over_map_text {
+        font-size: 0.7em;
+        margin-bottom: 5px;
+    }
+    #over_map .oj-select {
+        max-width: 9em;
+        min-width: 6em;
+        font-size: 0.7rem;
+    }
+    h1 {
+        text-align: center;
+    }
+    p {
+        text-align: center !important;
+    }
+    #side-title {
+        font-size: 1.71429rem;
+        font-weight: 300;
+        text-align: center;
+    }
+    #pedidos .oj-inputtext,
+    .oj-inputsearch,
+    .oj-select {
+        max-width: none !important;
+    }
+    #contacto .oj-inputtext,
+    .oj-inputsearch,
+    .oj-select {
+        max-width: none !important;
+    }
+    #entrecalle2-input {
+        width: 97%;
+    }
+    .right-column .form-group {
+        margin-left: 0px;
+    }
+    .left-column .form-group {
+        margin-right: 0px;
+    }
+    #navTemplate * {
+        font-size: 20px;
+    }
+    .oj-web-applayout-header > div,
+    .oj-web-applayout-footer > div {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .oj-web-applayout-header-title {
+        font-size: 1.3em;
+    }
+    #appNameContainer {
+        margin-left: 3%;
+        width: 100%;
+    }
+}
