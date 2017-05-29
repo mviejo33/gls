@@ -97,7 +97,6 @@ section {
             Somos una empresa proveedora de Gas LP ubicada en Escobedo, Nuevo León.
         </p>
         <br>
-        
         <div class="oj-flex" id="perks_wrapper">
             <div class="oj-sm-12 oj-md-3 perk">
                 <div class="svg-icon-wrapper">
@@ -106,7 +105,7 @@ section {
                 <div class="perk-title">
                     Domiciliario
                 </div>
-       <!--          <div class="perk-content">
+                <!--          <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </div> -->
             </div>
@@ -117,7 +116,7 @@ section {
                 <div class="perk-title">
                     Industrial
                 </div>
-             <!--    <div class="perk-content">
+                <!--    <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </div> -->
             </div>
@@ -128,7 +127,7 @@ section {
                 <div class="perk-title">
                     Estaciones
                 </div>
-    <!--             <div class="perk-content">
+                <!--             <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </div> -->
             </div>
@@ -143,13 +142,11 @@ section {
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </div> -->
             </div>
-            
         </div>
         <br>
         <p style="text-align: center;">
             Contamos con la comercialización y suministro de Gas LP para soluciones industriales y residenciales con 52 autotanques disponibles a su servicio los 365 días del año, además de 26 estaciones de carburación y plantas de almacenamiento para realizar recargas de cilindros y automóviles.
         </p>
-
     </section>
     <section id="estaciones">
         <div class="title_wrapper">
@@ -159,10 +156,12 @@ section {
             <div class="col-md-12 col-sm-12" id="map-canvas"></div>
             <div class="oj-panel" id="over_map">
                 <div class="over_map_text">Encuentra tu sucursal más cercana</div>
-                <select id="selectlocation" data-bind="ojComponent: {component: 'ojSelect', optionChange: estacionOptionChange,
-					rootAttributes: { style:'width:10em; margin-top:1em;'}}">
+                <select id="selectlocation" data-bind="ojComponent: {component: 'ojSelect', optionChange: estacionOptionChange, placeholder: 'Estaciones',
+					rootAttributes: { style:'width:12em; margin-top:2em;'}}">
                     <!-- ko foreach: estacionesSelect -->
-                    <option data-bind="value:value, text:label"></option>
+                    <optgroup data-bind="attr: {label:label}, foreach: children">
+                        <option data-bind="value:value, text:label"></option>
+                    </optgroup>
                     <!-- /ko -->
                 </select>
             </div>
@@ -224,50 +223,50 @@ section {
                             </div>
                         </div>
                         <div class="right-column oj-sm-12 oj-md-6">
-                    <div class="oj-flex">
-                            <div class="form-group">
-                                <!-- <label for="colonia-input" class="form-control-label">Colonia</label>             -->
-                                <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
+                            <div class="oj-flex">
+                                <div class="form-group">
+                                    <!-- <label for="colonia-input" class="form-control-label">Colonia</label>             -->
+                                    <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
 								rootAttributes: {style:'max-width:20em;'}, value:colonia, placeholder: 'Colonia'}">
-                                    <!-- ko foreach: municipios -->
-                                    <option data-bind="value:value, text:label"></option>
-                                    <!-- /ko -->
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="calle-input" class="form-control-label">Calle</label>                   -->
-                                <input id="calle-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                        <!-- ko foreach: municipios -->
+                                        <option data-bind="value:value, text:label"></option>
+                                        <!-- /ko -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="calle-input" class="form-control-label">Calle</label>                   -->
+                                    <input id="calle-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: calle, placeholder: 'Calle',
 								rootAttributes: {style:'max-width:20em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="nointerior-input" class="form-control-label">Numero Interior</label>                             -->
-                                <input id="nointerior-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="nointerior-input" class="form-control-label">Numero Interior</label>                             -->
+                                    <input id="nointerior-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: noInterior, placeholder: 'Numero interior/exterior',
 								rootAttributes: {style:'max-width: 20em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="arrivaltime-input" class="form-control-label">Hora de llegada</label>                             -->
-                                <input id="arrivaltime-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                </div>
+                                <div class="form-group">
+                                    <!-- <label for="arrivaltime-input" class="form-control-label">Hora de llegada</label>                             -->
+                                    <input id="arrivaltime-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: arrivalTime, placeholder: 'Hora de llegada',
 								rootAttributes: {style:'max-width: 20em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <div class="oj-flex">
-                                	<div style="width: 45%">
-	                                    <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                </div>
+                                <div class="form-group">
+                                    <div class="oj-flex">
+                                        <div style="width: 45%">
+                                            <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 										value: entrecalle1, placeholder: 'Entre calle (1)',
 										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
-									</div>
-                                	<div style="width: 50%; margin-left: 5%;">
-	                                    <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                        </div>
+                                        <div style="width: 50%; margin-left: 5%;">
+                                            <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 										value: entrecalle2, placeholder: 'Entre calle (2)',
 										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
-									</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                         <input id="send-button" type="button" data-bind="click: submitOrder, 
 								ojComponent: {component: 'ojButton', label: 'Enviar', 
 								rootAttributes: {style:'width: 100%;'}}" />
@@ -280,56 +279,56 @@ section {
 <div class="oj-hybrid-padding oj-web-applayout-max-width" style="padding-top: 0px; padding-bottom: 0px;">
     <section id="contacto">
         <div class="oj-flex">
-        	<div class="oj-sm-0 oj-md-1 oj-flex-item"></div>
-            <div class="oj-sm-12 oj-md-6 oj-flex-item">
-                    <h2 id="side-title">
+            <div class="oj-sm-0 oj-md-1 oj-flex-item"></div>
+            <div class="oj-sm-12 oj-md-5 oj-flex-item">
+                <h2 id="side-title">
 						Estamos a tu disposición
-					</h2>
-                    <br>
-                    <p>Escribenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al XXXXXXXX y en Whatsapp al XXXXXXXXX.</p>
-                    <div class="oj-flex">
-                        <div class="form-group">
-                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+				</h2>
+                <p>Escríbenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al XXXXXXXX y en Whatsapp al XXXXXXXXX.</p>
+                <div style="width: 50%;" class="svg-icon-wrapper">
+                    <img src="css/images/customer-service.svg" alt="bulleted list image" />
+                </div>
+            </div>
+            <div class=" oj-sm-12 oj-md-5 oj-flex oj-sm-align-items-center">
+                <div style="margin-top: 10%; padding-left: 5%;" class="oj-flex">
+                    <div class="form-group">
+                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Nombre',
 								rootAttributes: {style:'width: 100%; max-width: none'}}" />
-                        </div>
-                        <div class="form-group">
-                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                    </div>
+                    <div class="form-group">
+                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Teléfono',
-								rootAttributes: {style:'width: 100%;'}}" />
-                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+								rootAttributes: {style:'width: 100%;max-width:none;'}}" />
+                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
 								value: nombre, placeholder: 'Correo electrónico',
-								rootAttributes: {style:'width: 100%'}}" />
-                        </div>
-                        <div class="form-group">
-                            <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Estado'}">
-                                <!-- ko foreach: municipios -->
-                                <option data-bind="value:value, text:label"></option>
-                                <!-- /ko -->
-                            </select>
-                            <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Municipio'}">
-                                <!-- ko foreach: municipios -->
-                                <option data-bind="value:value, text:label"></option>
-                                <!-- /ko -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="contact-comentario" style="height: 100px; resize: vertical;" data-bind="ojComponent: {component: 'ojTextArea', placeholder: 'Comentarios...',
+								rootAttributes: {style:'width: 100%;max-width:none;'}}" />
+                    </div>
+                    <div class="form-group">
+                        <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:none'}, value: municipio, placeholder: 'Estado'}">
+                            <!-- ko foreach: estados -->
+                            <option data-bind="value:value, text:label"></option>
+                            <!-- /ko -->
+                        </select>
+                        <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+								rootAttributes: {style:'max-width:none'}, value: municipio, placeholder: 'Municipio'}">
+                            <!-- ko foreach: municipios -->
+                            <option data-bind="value:value, text:label"></option>
+                            <!-- /ko -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-comentario" style="height: 100px; resize: vertical;" data-bind="ojComponent: {component: 'ojTextArea', placeholder: 'Comentarios...',
 					                                     value: contactoComentario, rootAttributes: {style:'max-width:none; height: 100%;'}}"></textarea>
-                        </div>
-                        <input id="send-button" type="button" data-bind="click: submitOrder, 
+                    </div>
+                    <input id="send-button" type="button" data-bind="click: submitOrder, 
 								ojComponent: {component: 'ojButton', label: 'Enviar', 
 								rootAttributes: {style:'width: 100%;'}}" />
-
-                    </div>
-            </div>
-            <div class=" oj-sm-12 oj-md-6">
+                </div>
             </div>
         </div>
-    </section>
 </div>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvmGb0nFyRyCbZ55UT4KXvdXzE&callback=handleAttached"
-  type="text/javascript"></script>
+</section>
+</div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvmGb0nFyRyCbZ55UT4KXvdXzE&callback=handleAttached" type="text/javascript"></script>

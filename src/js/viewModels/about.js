@@ -26,6 +26,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'slickcarousel', 'ojs/ojinputtext', 
             self.status = ko.observable();
             self.estacionMap = ko.observable();
             self.contactoComentario = ko.observable();
+            self.estados = ko.observableArray([
+                { value: 'Nuevo Leon', label: 'Nuevo León' },
+                { value: 'Coahuila', label: 'Coahuila' }
+
+
+              ]);
             self.municipios = ko.observableArray([
                 { value: 'Abasolo', label: 'Abasolo' },
                 { value: 'Agualeguas', label: 'Agualeguas' },
@@ -157,13 +163,73 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'slickcarousel', 'ojs/ojinputtext', 
                 }
             }
 
-            var zoomMap = 10;
-            self.estacionesSelect = ko.observableArray([
-                { value: [40.6866, -180.3161, zoomMap].join('|'), label: 'Estacion1' },
-                { value: [50.6866, -180.3161, zoomMap].join('|'), label: 'Estacion2' },
-                { value: [60.6866, -180.3161, zoomMap].join('|'), label: 'Estacion3' },
-                { value: [70.6866, -180.3161, zoomMap].join('|'), label: 'Estacion4' },
-            ]);
+            var zoomMap = 15
+            self.estacionesSelect = ko.observableArray([{
+                label: "Apodaca",
+                children: [
+                    { value: [25.815132, -100.222470, zoomMap].join('|'), label: 'Santa Rosa Mezquital' }
+                ]
+            }, {
+                label: "Escobedo",
+                children: [
+                    { value: [25.838787, -100.399090, zoomMap].join('|'), label: 'Alianza Real' },
+                    { value: [25.793211,-100.293287, zoomMap].join('|'), label: 'Carretera Colombia' },
+                    { value: [25.835758, -100.378895, zoomMap].join('|'), label: 'Agropecuaria' },
+                    { value: [25.826083, -100.291272, zoomMap].join('|'), label: 'Libramiento Noreste' },
+                    { value: [25.775578, -100.317221, zoomMap].join('|'), label: 'Joyas de Anáhuac' },
+                    { value: [25.792106, -100.324999, zoomMap].join('|'), label: 'Girasoles' },
+                    { value: [25.798314, -100.383207, zoomMap].join('|'), label: 'Santa Marta' }
+                ]
+            }, {
+                label: "García",
+                children: [
+                    { value: [25.825514, -100.618068, zoomMap].join('|'), label: 'Cerritos' },
+                    { value: [25.798306, -100.383194, zoomMap].join('|'), label: 'Carretera Grutas' },
+                    { value: [25.799665, -100.607640, zoomMap].join('|'), label: 'Maravillas' }
+                ]
+            }, {
+                label: "Monterrey",
+                children: [
+                    { value: [25.736670, -100.332320, zoomMap].join('|'), label: 'Topo Chico' },
+                    { value: [25.752030, -100.391170, zoomMap].join('|'), label: 'Lincoln' }
+                ]
+            }, {
+                label: "Pesquería",
+                children: [
+                    { value: [25.789851, -100.069759, zoomMap].join('|'), label: 'Pesquería Ladrillera' }
+                ]
+            }, {
+                label: "Sabinas Hidalgo",
+                children: [
+                    { value: [26.512724, -100.174341, zoomMap].join('|'), label: 'Carretera Nacional' },
+                     { value: [26.447000, -100.158048, zoomMap].join('|'), label: 'Loma Larga' }
+                ]
+            }, {
+                label: "San Nicolás",
+                children: [
+                    { value: [225.7094399,-100.2792799, zoomMap].join('|'), label: 'Nogalar' }
+                ]
+            }, {
+                label: "Santa Catarina",
+                children: [
+                    { value: [25.6767652,-100.4304943, zoomMap].join('|'), label: '1 de Mayo' }
+                ]
+            }, {
+                label: "Zuazua",
+                children: [
+                    { value: [25.896218, -100.129239, zoomMap].join('|'), label: 'Zuazua Laredo' }
+                ]
+            }, {
+                label: "Acuña",
+                children: [
+                    { value: [29.323346, -100.981641, zoomMap].join('|'), label: 'Cedros' },
+                    { value: [29.341008, -100.958738, zoomMap].join('|'), label: 'Granjas' },
+                    { value: [29.306761, -100.946732, zoomMap].join('|'), label: 'José de las Fuentes' },
+                    { value: [29.288002, -100.898646, zoomMap].join('|'), label: 'Jabalí Zorra' },
+                    { value: [29.337957,-100.997072, zoomMap].join('|'), label: 'San Eulalia' },
+                    { value: [29.289146,-100.954242, zoomMap].join('|'), label: 'Sur Poniente' }
+                ]
+            }]);
 
             self.map = undefined;
 
@@ -179,21 +245,28 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'slickcarousel', 'ojs/ojinputtext', 
              * @param {boolean} info.fromCache - A boolean indicating whether the module was retrieved from cache.
              */
             self.handleAttached = function(info) {
-
-
                 $('.single-item').slick();
 
                 self.map = new google.maps.Map(document.getElementById('map-canvas'), {
-                    zoom: zoomMap,
+                    zoom: zoomMap-4,
                     scrollwheel: false,
                     center: { lat: 25.6866, lng: -100.3161 }
                 });
+
+
+
+
                 self.estacionesSelect().forEach(function(data) {
+                  var children = data.children;
+                  var i = 0;
+                  for(i; i <children.length; i++) {
                     var newmarker = new google.maps.Marker({
+                        position: { lat: parseFloat(children[String(i)].value.split('|')[0]), lng: parseFloat(children[String(i)].value.split('|')[1]) },
                         map: self.map,
-                        position: { lat: parseInt(data.value.split('|')[0]), lng: parseInt(data.value.split('|')[1]) },
-                        title: data.label
+                        title: data.children[String(i)].label,
                     });
+                  }
+                    
                 });
 
 

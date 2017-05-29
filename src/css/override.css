@@ -101,7 +101,6 @@ body {
 }
 
 p {
-    font-size: 16px;
     text-align: justify;
 }
 
@@ -294,7 +293,8 @@ footer * {
         padding: 2px;
         text-align: left;
     }
-    .footer-appName-section {
-        margin-bottom: 10px;
+    #footer-appName-section {
+        margin-bottom: 15px;
+        margin-top: 15px;
     }
 }
