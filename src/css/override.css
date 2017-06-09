@@ -24,6 +24,10 @@ body {
     vertical-align: middle !important;
 }
 
+.oj-margin-sm-bottom {
+    margin-bottom: 5px;
+}
+
 .oj-web-applayout-header-title {
     font-size: 1.5rem;
 }
@@ -57,8 +61,24 @@ body {
     margin: auto;
 }
 
+.oj-inputtext-input,
+.oj-inputnumber-input,
+.oj-buttonset-width-auto,
+.oj-select-choice,
+.oj-inputsearch-choice,
+.oj-button,
+.oj-inputdatetime-input,
+.oj-inputdatetime-input-trigger {
+    height: 3rem !important;
+}
+
 #map-canvas {
     height: 600px;
+}
+
+.oj-padding-sm-horizontal {
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 #over_map {
@@ -73,6 +93,10 @@ body {
     background: rgba(255, 255, 255);
     height: 125px;
     width: 25%;
+}
+
+#over_map .oj-select {
+    margin-top: 2em;
 }
 
 .svg-icon-wrapper {
@@ -100,6 +124,74 @@ body {
     margin: auto;
 }
 
+$bluegls: #0081F9;
+$lighterbluegls: #70baff;
+$redgls: #FA0000;
+$yellowgls: #FEFFB5;
+.svg-icon-wrapper {
+    width: 40%;
+    margin: auto;
+}
+
+.perk {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+section {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.pedido-bkg-image {
+    background-image: url(/css/images/road.jpg);
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+}
+
+.pedido-bkg-image h1 {
+    color: white;
+}
+
+.pedido-bkg-image h2 {
+    color: white;
+}
+
+.svg-icon {
+    width: 100%;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    border-radius: 30%;
+    background-color: #70baff;
+    height: 100px;
+}
+
+#order-header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.transparent-bg {
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 20px;
+}
+
+#map_wrapper {
+    position: relative;
+}
+
+#order-left-content {
+    margin-right: 2em;
+}
+
 p {
     text-align: justify;
 }
@@ -112,7 +204,6 @@ footer * {
     /*width: 15%;*/
     padding-bottom: 8px;
     display: inline-block;
-    width: 45%;
 }
 
 .oj-web-applayout-footer-item {
@@ -182,7 +273,7 @@ footer * {
     z-index: 500;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .title_wrapper {
         font-size: 2rem;
         font-family: "Circular", sans-serif;
@@ -236,6 +327,7 @@ footer * {
         max-width: 9em;
         min-width: 6em;
         font-size: 0.7rem;
+        margin-top: 0.8em;
     }
     h1 {
         text-align: center;
@@ -257,9 +349,6 @@ footer * {
     .oj-inputsearch,
     .oj-select {
         max-width: none !important;
-    }
-    #entrecalle2-input {
-        width: 97%;
     }
     .right-column .form-group {
         margin-left: 0px;
@@ -285,7 +374,6 @@ footer * {
     #copyright {
         font-size: 0.7em !important;
     }
-
     .footer-title {
         text-align: left;
     }
@@ -296,5 +384,14 @@ footer * {
     #footer-appName-section {
         margin-bottom: 15px;
         margin-top: 15px;
+    }
+}
+
+@media (max-width: 763px) {
+    .footer-section * {
+        text-align: center;
+    }
+    .center-sm-margin-auto {
+        margin: auto;
     }
 }

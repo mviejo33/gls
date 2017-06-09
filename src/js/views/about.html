@@ -1,71 +1,4 @@
 <style type="text/css">
-$bluegls: #0081F9;
-$lighterbluegls: #70baff;
-$redgls: #FA0000;
-$yellowgls: #FEFFB5;
-.svg-icon-wrapper {
-    width: 40%;
-    margin: auto;
-}
-
-.perk {
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 5px;
-    width: 100%;
-}
-
-section {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
-.pedido-bkg-image {
-    background-image: url(/css/images/road.jpg);
-    width: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: white;
-}
-
-.pedido-bkg-image h1 {
-    color: white;
-}
-
-.pedido-bkg-image h2 {
-    color: white;
-}
-
-.svg-icon {
-    width: 100%;
-    padding-bottom: 1.5em;
-    padding-top: 1.5em;
-    border-radius: 30%;
-    background-color: #70baff;
-    height: 100px;
-}
-
-#order-header {
-    text-align: center;
-    margin-bottom: 1.5em;
-}
-
-.transparent-bg {
-    background: rgba(0, 0, 0, 0.8);
-    border: none;
-    border-radius: 20px;
-}
-
-#map_wrapper {
-    position: relative;
-}
-
-#order-left-content {
-    margin-right: 2em;
-}
 </style>
 <!--
  Copyright (c) 2014, 2017, Oracle and/or its affiliates.
@@ -136,7 +69,7 @@ section {
                     <img src="css/images/gas.svg" alt="bulleted list image" />
                 </div>
                 <div class="perk-title">
-                    Portatil
+                    Portátil
                 </div>
                 <!-- <div class="perk-content">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -144,9 +77,9 @@ section {
             </div>
         </div>
         <br>
-        <p style="text-align: center;">
+        <!--         <p style="text-align: center;">
             Contamos con la comercialización y suministro de Gas LP para soluciones industriales y residenciales con 52 autotanques disponibles a su servicio los 365 días del año, además de 26 estaciones de carburación y plantas de almacenamiento para realizar recargas de cilindros y automóviles.
-        </p>
+        </p> -->
     </section>
     <section id="estaciones">
         <div class="title_wrapper">
@@ -156,14 +89,16 @@ section {
             <div class="col-md-12 col-sm-12" id="map-canvas"></div>
             <div class="oj-panel" id="over_map">
                 <div class="over_map_text">Encuentra tu sucursal más cercana</div>
-                <select id="selectlocation" data-bind="ojComponent: {component: 'ojSelect', optionChange: estacionOptionChange, placeholder: 'Estaciones',
-					rootAttributes: { style:'width:12em; margin-top:2em;'}}">
-                    <!-- ko foreach: estacionesSelect -->
-                    <optgroup data-bind="attr: {label:label}, foreach: children">
-                        <option data-bind="value:value, text:label"></option>
-                    </optgroup>
-                    <!-- /ko -->
-                </select>
+                <div style="height: 2.28571rem !important;">
+                    <select id="selectlocation" data-bind="ojComponent: {component: 'ojSelect', optionChange: estacionOptionChange, placeholder: 'Estaciones',
+                    rootAttributes: { style:'width:12em;max-height:100%;'}}">
+                        <!-- ko foreach: estacionesSelect -->
+                        <optgroup data-bind="attr: {label:label}, foreach: children">
+                            <option data-bind="value:value, text:label"></option>
+                        </optgroup>
+                        <!-- /ko -->
+                    </select>
+                </div>
             </div>
         </div>
     </section>
@@ -171,160 +106,129 @@ section {
 <section id="pedidos" class="pedido-bkg-image">
     <div class="oj-hybrid-padding oj-web-applayout-max-width">
         <div class="oj-flex">
-            <div class=" oj-sm-12 oj-md-6 oj-flex-item">
+            <div class=" oj-sm-12 oj-lg-6 oj-flex-item">
                 <div id="order-left-content">
                     <h2 id="side-title">
-						¿NECESITAS GAS A DOMICILIO?
-					</h2>
+                        ¿NECESITAS GAS A DOMICILIO?
+                    </h2>
                     <p>Llena nuestra forma y mandaremos un chofer a tu domicilio, si ya has realizado pedidos antes basta con que ingreses tu teléfono.</p>
                 </div>
             </div>
-            <div class="oj-sm-12 oj-md-6">
+            <div class="oj-sm-12 oj-lg-6">
                 <div class="transparent-bg oj-panel">
                     <div id="order-header">
-                        <h2>Ordena tu pedido</h2>
+                        <h1>Ordena tu pedido</h1>
                     </div>
                     <div class="oj-flex">
-                        <div class="left-column oj-sm-12 oj-md-6">
-                            <div class="form-group">
-                                <!-- <label for="cp-input" class="form-control-label">Codigo Postal</label>               -->
-                                <input id="cp-input" placeholder="Busca tu codigo postal..." data-bind="ojComponent: {
-								component: 'ojInputSearch',
-								value: cpostal, placeholder: 'Codigo Postal',
-								optionChange: doZIPSearch,
-								rootAttributes: {style:'max-width: 18em'}}">
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="customername-input" class="form-control-label">Nombre</label>               -->
-                                <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: nombre, placeholder: 'Nombre',
-								rootAttributes: {style:'max-width: 18em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="telefono-input" class="form-control-label">Telefono</label>             -->
-                                <input id="telefono-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: telefono, placeholder: 'Teléfono',
-								rootAttributes: {style:'max-width: 18em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="importe-input" class="form-control-label">Importe</label>               -->
-                                <input id="importe-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: importe, placeholder: 'Importe',
-								rootAttributes: {style:'max-width: 18em'}}" />
-                            </div>
-                            <div class="form-group">
-                                <!-- <label for="municipio-input" class="form-control-label">Municipio</label>      -->
-                                <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:18em'}, value: municipio, placeholder: 'Municipio'}">
-                                    <!-- ko foreach: municipios -->
-                                    <option data-bind="value:value, text:label"></option>
-                                    <!-- /ko -->
-                                </select>
-                            </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="telefono-input" type="text" data-bind="ojComponent: {component: 'ojInputNumber', 
+                                value: telefono, 
+                messageSummary: 'custom: \'{label}\' is Required', 
+                messageDetail: 'custom: you must enter a number into \'{label}\'', placeholder: 'Teléfono (10 dígitos)', optionChange: lookForClientData, 
+                                rootAttributes: {style:'width: 100%; max-width:none;'},validators: [{
+                                        type: 'length',
+                                        options : {
+                                          min: 10,
+                                          max: 10,
+                                        hint: {exact: 'Ingresa exactamente {length} dígitos (Ej 8183123456)'},
+                                        messageSummary: {tooLong: 'Exceso de dígitos', tooShort: 'Dígitos insuficientes'},
+                                        messageDetail: {tooLong: 'Deben de ser 10', tooShort: 'Deben de ser 10'}
+                                        }
+                                      }]}" />
                         </div>
-                        <div class="right-column oj-sm-12 oj-md-6">
-                            <div class="oj-flex">
-                                <div class="form-group">
-                                    <!-- <label for="colonia-input" class="form-control-label">Colonia</label>             -->
-                                    <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:20em;'}, value:colonia, placeholder: 'Colonia'}">
-                                        <!-- ko foreach: municipios -->
-                                        <option data-bind="value:value, text:label"></option>
-                                        <!-- /ko -->
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <!-- <label for="calle-input" class="form-control-label">Calle</label>                   -->
-                                    <input id="calle-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: calle, placeholder: 'Calle',
-								rootAttributes: {style:'max-width:20em'}}" />
-                                </div>
-                                <div class="form-group">
-                                    <!-- <label for="nointerior-input" class="form-control-label">Numero Interior</label>                             -->
-                                    <input id="nointerior-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: noInterior, placeholder: 'Numero interior/exterior',
-								rootAttributes: {style:'max-width: 20em'}}" />
-                                </div>
-                                <div class="form-group">
-                                    <!-- <label for="arrivaltime-input" class="form-control-label">Hora de llegada</label>                             -->
-                                    <input id="arrivaltime-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: arrivalTime, placeholder: 'Hora de llegada',
-								rootAttributes: {style:'max-width: 20em'}}" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="oj-flex">
-                                        <div style="width: 45%">
-                                            <input id="entrecalle1-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-										value: entrecalle1, placeholder: 'Entre calle (1)',
-										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
-                                        </div>
-                                        <div style="width: 50%; margin-left: 5%;">
-                                            <input id="entrecalle2-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-										value: entrecalle2, placeholder: 'Entre calle (2)',
-										rootAttributes: {style:'width: 100%;max-width: none;'}}" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="cp-input" placeholder="Busca tu codigo postal..." data-bind="ojComponent: {
+                                component: 'ojInputSearch',
+                                value: cpostal, placeholder: 'Codigo Postal',
+                                optionChange: doZIPSearch,
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}">
                         </div>
-                        <input id="send-button" type="button" data-bind="click: submitOrder, 
-								ojComponent: {component: 'ojButton', label: 'Enviar', 
-								rootAttributes: {style:'width: 100%;'}}" />
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: nombre, placeholder: 'Nombre completo',
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}" />
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
+                                rootAttributes: {style:'width: 100%; max-width:none;'}, value: municipio, placeholder: 'Municipio'}">
+                                <!-- ko foreach: municipios -->
+                                <option data-bind="value:value, text:label"></option>
+                                <!-- /ko -->
+                            </select>
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <select id="colonia-input" data-bind="ojComponent: {component: 'ojSelect',  
+                                rootAttributes: {style:'width: 100%; max-width:none;'}, value:colonia, placeholder: 'Colonia'}">
+                                <!-- ko foreach: colonias -->
+                                <option data-bind="value:value, text:label"></option>
+                                <!-- /ko -->
+                            </select>
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="calle-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: calle, placeholder: 'Calle',
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}" />
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="numero-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: numero, placeholder: 'Numero interior/exterior',
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}" />
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="entrecalles-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: entrecalles, placeholder: 'Entre calles/referencia',
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}" />
+                        </div>
+                        <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                            <input id="arrivaltime-input" type="text" data-bind="ojComponent: {component: 'ojInputTime', 
+                                value: horaLlegada, min: todayISODatePlusAnHour, max: 'T18:00:00.000', timePicker: {
+                                    timeIncrement: '00:15:00:00'
+                                  },
+                                rootAttributes: {style:'width: 100%; max-width:none;'}}" />
+                        </div>
+                        <input id="send-button" class="oj-margin-top" type="button" data-bind="click: submitOrder, 
+                                ojComponent: {component: 'ojButton', label: 'Enviar', 
+                                rootAttributes: {style:'width: 100%;'}}" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
 </section>
 <div class="oj-hybrid-padding oj-web-applayout-max-width" style="padding-top: 0px; padding-bottom: 0px;">
     <section id="contacto">
+        <div class="title_wrapper">
+            Contacto en línea
+        </div>
         <div class="oj-flex">
-            <div class="oj-sm-0 oj-md-1 oj-flex-item"></div>
-            <div class="oj-sm-12 oj-md-5 oj-flex-item">
-                <h2 id="side-title">
-						Estamos a tu disposición
-				</h2>
-                <p>Escríbenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al XXXXXXXX y en Whatsapp al XXXXXXXXX.</p>
-                <div style="width: 50%;" class="svg-icon-wrapper">
-                    <img src="css/images/customer-service.svg" alt="bulleted list image" />
-                </div>
-            </div>
-            <div class=" oj-sm-12 oj-md-5 oj-flex oj-sm-align-items-center">
-                <div style="margin-top: 10%; padding-left: 5%;" class="oj-flex">
-                    <div class="form-group">
-                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: nombre, placeholder: 'Nombre',
-								rootAttributes: {style:'width: 100%; max-width: none'}}" />
+            <div class="oj-sm-0 oj-md-3 oj-flex-item"></div>
+            <div class="oj-sm-12 oj-md-6 oj-flex-item" style="margin-right: 3%;">
+                <p>Escríbenos tus dudas o comentarios y nos pondremos en contacto contigo. También nos puedes llamar al (81) 8154 6500 y en Whatsapp al 811 271 10 80.</p>
+                <div class="oj-flex">
+                    <div class="oj-flex-item oj-lg-12 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                        <input id="contact-name" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: contactoNombre, placeholder: 'Nombre completo',
+                                rootAttributes: {style:'width: 100%; max-width: none'}}" />
                     </div>
-                    <div class="form-group">
-                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: nombre, placeholder: 'Teléfono',
-								rootAttributes: {style:'width: 100%;max-width:none;'}}" />
-                        <input id="customername-input" type="text" data-bind="ojComponent: {component: 'ojInputText', 
-								value: nombre, placeholder: 'Correo electrónico',
-								rootAttributes: {style:'width: 100%;max-width:none;'}}" />
+                    <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                        <input id="contact-phone" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: contactoTelefono, placeholder: 'Teléfono',
+                                    rootAttributes: {style:'width: 100%; max-width: none;'}}" />
                     </div>
-                    <div class="form-group">
-                        <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:none'}, value: municipio, placeholder: 'Estado'}">
-                            <!-- ko foreach: estados -->
-                            <option data-bind="value:value, text:label"></option>
-                            <!-- /ko -->
-                        </select>
-                        <select id="municipio-input" data-bind="ojComponent: {component: 'ojSelect',  
-								rootAttributes: {style:'max-width:none'}, value: municipio, placeholder: 'Municipio'}">
-                            <!-- ko foreach: municipios -->
-                            <option data-bind="value:value, text:label"></option>
-                            <!-- /ko -->
-                        </select>
+                    <div class="oj-flex-item oj-sm-12 oj-lg-6 oj-margin-sm-bottom oj-padding-sm-horizontal">
+                        <input id="contact-email" type="text" data-bind="ojComponent: {component: 'ojInputText', 
+                                value: contactoEmail, placeholder: 'Correo electrónico',
+                                rootAttributes: {style:'width: 100%; max-width: none;'}}" />
                     </div>
-                    <div class="form-group">
+                    <div class="oj-flex-item oj-lg-12 oj-margin-sm-bottom oj-padding-sm-horizontal">
                         <textarea id="contact-comentario" style="height: 100px; resize: vertical;" data-bind="ojComponent: {component: 'ojTextArea', placeholder: 'Comentarios...',
-					                                     value: contactoComentario, rootAttributes: {style:'max-width:none; height: 100%;'}}"></textarea>
+                                                         value: contactoComentario, rootAttributes: {style:'width: 100%; max-width:none;'}}"></textarea>
                     </div>
                     <input id="send-button" type="button" data-bind="click: submitOrder, 
-								ojComponent: {component: 'ojButton', label: 'Enviar', 
-								rootAttributes: {style:'width: 100%;'}}" />
+                                ojComponent: {component: 'ojButton', label: 'Enviar', 
+                                rootAttributes: {style:'width: 100%;'}}" />
                 </div>
             </div>
         </div>
